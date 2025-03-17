@@ -67,6 +67,9 @@ const Populor = () => {
                       delay: 0.3,
                     }}
                   >
+                    <h1 className="font-kanit text-[17px] leading-3 opacity-70 line-through ">
+                      {watch.demoPrice}$
+                    </h1>
                     <h1 className="font-kanit text-[27px]">{watch.price}$</h1>
                   </motion.div>
                 </div>

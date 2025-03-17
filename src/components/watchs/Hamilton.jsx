@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { ProductContext } from "../context/ProductContext";
 import { TelegramContext } from "../context/TelegramContext";
 
-const categories = ["All", "Jazzmaster", "Railroad", "Broadway"];
+const categories = ["All"];
 
 const Hamilton = () => {
   const { sendToTelegram } = useContext(TelegramContext);
@@ -38,15 +38,15 @@ const Hamilton = () => {
 
   return (
     <div>
-      <div className="sticky top-0 z-[10000000] flex flex-col gap-[10px] dark:bg-white bg-[#4c4c4c] p-[13px] px-[15px] ">
+      <div className="sticky top-0 z-[10000000] flex flex-col gap-[10px] dark:bg-white bg-[#232323] p-[15px] px-[13px] border-white border-b-[2px] ">
         <Link to="/" className="">
           <h1 className="flex items-center gap-[2px] font-bold font-nunito text-[17px]">
-            <FaChevronLeft className="text-[27px]" /> назад
+            <FaChevronLeft className="text-[28px]" /> назад
           </h1>
         </Link>
       </div>
 
-      <div className="flex gap-[13px] overflow-x-scroll border-t-[2px] border-white dark:bg-white bg-[#0f192b] p-[10px] hide-scrollbar ">
+      <div className="flex gap-[13px] overflow-x-scroll dark:bg-white bg-[#232323] p-[10px] hide-scrollbar ">
         <button
           onClick={() => setOpenFilter(true)}
           className="px-[15px] py-[5px] rounded-full text-sm font-semibold whitespace-nowrap transition-all bg-blue-500"
@@ -88,7 +88,7 @@ const Hamilton = () => {
         </div>
       )}
 
-      <div className="mt-[10px] mb-[85px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-[8px] w-[97%] m-auto">
+      <div className="mt-[10px] mb-[15px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-[8px] w-[97%] m-auto">
         {filteredProducts.map((watch) => (
           <div onClick={() => handleProductClick(watch)} key={watch.id}>
             <Link to={`/hamilton/${watch.id}`}>
@@ -96,67 +96,73 @@ const Hamilton = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ ease: "easeOut", duration: 1.5 }}
-                className="flex justify-between items-center border-[#25365a] dark:bg-white bg-[#4c4c4c] overflow-hidden relative rounded-[20px] border-[2px] border-solid p-[10px]"
+                className=" flex justify-between items-center border-[#232222] dark:bg-white bg-[#3d3d3d] overflow-hidden relative rounded-[20px] border-[3px] border-solid px-[13px]  py-[15px]"
               >
-                <div className="flex flex-col justify-between gap-[23px]">
+                {/* text */}
+                <div className=" flex flex-col justify-between gap-[23px] ">
+                  {/* logo */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{
-                      ease: "easeOut",
-                      duration: 1,
+                      ease: "easeOut", // Easing funksiyasi
+                      duration: 1, // Animatsiya davomiyligi
                       delay: 0.1,
                     }}
-                    className="flex gap-[10px] items-center"
+                    className=" flex gap-[10px] items-center "
                   >
                     <img
                       src={watch.logo}
                       alt="logo-brend"
-                      className={`${watch.logoWidth} ${watch.logoColor} ${watch.logoPa} rounded-lg object-cover`}
+                      className={` w-[50px] ${watch.logoColor} ${watch.logoPa} bg-black rounded-[50%] object-cover`}
                     />
                   </motion.div>
+                  {/* title */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{
-                      ease: "easeOut",
-                      duration: 1,
+                      ease: "easeOut", // Easing funksiyasi
+                      duration: 1, // Animatsiya davomiyligi
                       delay: 0.2,
                     }}
                   >
-                    <h1 className="text-[19px] leading-6 uppercase font-bold font-nunito">
-                      {watch.title}
+                    <h1 className="text-[20px] leading-6 uppercase font-bold font-nunito ">
+                      {watch.brend}
                     </h1>
-                    <h1 className="text-[10px]">{watch.allTitle}</h1>
+                    <h1 className=" text-[16px]">{watch.rafcode}</h1>
                   </motion.div>
+                  {/* price */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{
-                      ease: "easeOut",
-                      duration: 1,
+                      ease: "easeOut", // Easing funksiyasi
+                      duration: 1, // Animatsiya davomiyligi
                       delay: 0.3,
                     }}
                   >
-                    {/* <h1 className="line-through leading-3 opacity-80">
+                    <h1 className="font-kanit text-[17px] leading-3 opacity-70 line-through ">
                       {watch.demoPrice}$
-                    </h1> */}
+                    </h1>
                     <h1 className="font-kanit text-[27px]">{watch.price}$</h1>
                   </motion.div>
                 </div>
+                {/* img */}
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
-                    ease: "easeOut",
-                    duration: 1,
+                    ease: "easeOut", // Easing funksiyasi
+                    duration: 1, // Animatsiya davomiyligi
                     delay: 0.2,
                   }}
+                  className={`absolute ${watch.right} `}
                 >
                   <img
                     src={watch.mainImage}
                     alt="image-product-watch"
-                    className="h-[200px]"
+                    className=" h-[180px]"
                   />
                 </motion.div>
               </motion.div>
