@@ -38,7 +38,7 @@ const Hamilton = () => {
 
   return (
     <div>
-      <div className="sticky top-0 z-[10000000] flex flex-col gap-[10px] dark:bg-white bg-[#232323] p-[15px] px-[13px] border-white border-b-[2px] ">
+      <div className="sticky top-0 z-[10000000] flex flex-col gap-[10px] dark:bg-white bg-[#232323] p-[15px] px-[13px] border-[#444343] border-b-[2px] ">
         <Link to="/" className="">
           <h1 className="flex items-center gap-[2px] font-bold font-nunito text-[17px]">
             <FaChevronLeft className="text-[28px]" /> назад
@@ -46,7 +46,7 @@ const Hamilton = () => {
         </Link>
       </div>
 
-      <div className="flex gap-[13px] overflow-x-scroll dark:bg-white bg-[#232323] p-[10px] hide-scrollbar ">
+      <div className="flex gap-[13px] overflow-x-scroll dark:bg-white bg-[#232323] p-[10px] hide-scrollbar border-b-2 border-[#444343] ">
         <button
           onClick={() => setOpenFilter(true)}
           className="px-[15px] py-[5px] rounded-full text-sm font-semibold whitespace-nowrap transition-all bg-blue-500"
@@ -88,7 +88,7 @@ const Hamilton = () => {
         </div>
       )}
 
-      <div className="mt-[10px] mb-[15px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-[8px] w-[97%] m-auto">
+      <div className="mt-[10px] mb-[15px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-[10px] w-[97%] m-auto">
         {filteredProducts.map((watch) => (
           <div onClick={() => handleProductClick(watch)} key={watch.id}>
             <Link to={`/hamilton/${watch.id}`}>
@@ -96,7 +96,7 @@ const Hamilton = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ ease: "easeOut", duration: 1.5 }}
-                className=" flex justify-between items-center border-[#232222] dark:bg-white bg-[#3d3d3d] overflow-hidden relative rounded-[20px] border-[3px] border-solid px-[13px]  py-[15px]"
+                className=" flex justify-between items-center border-[#191919] dark:bg-white bg-[#323232] overflow-hidden relative rounded-[20px] border-[3px] border-solid px-[13px]  py-[15px]"
               >
                 {/* text */}
                 <div className=" flex flex-col justify-between gap-[23px] ">

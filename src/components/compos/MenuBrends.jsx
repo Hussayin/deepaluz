@@ -9,7 +9,7 @@ const MenuBrends = () => {
       slidesPerView={3.7}
       //   onSlideChange={() => console.log("Slide Change")}
       //   onSwiper={(swiper) => console.log(swiper)}
-      className=" md:hidden block pb-[7px]  mx-[3px] font-kanit dark:bg-white bg-[#3d3d3d] border-[#1c1c1c] border-[2px]  mt-[7px] rounded-2xl px-[3px] py-[7px] "
+      className=" md:hidden block pb-[7px]  mx-[3px] font-kanit dark:bg-white bg-[#323232] border-[#1c1c1c] border-[2px]  mt-[7px] rounded-2xl px-[3px] py-[7px] "
     >
       {watchBrends.map((brend) => {
         return (
@@ -21,7 +21,7 @@ const MenuBrends = () => {
               <img
                 src={brend.image}
                 alt={brend.title}
-                className=" border-solid rounded-[50%] h-[77px] w-[77px] text-center dark:bg-white bg-[black] border-[#202020] border-[2px] object-contain "
+                className=" border-solid rounded-[50%] h-[75px] w-[75px] text-center dark:bg-white bg-[black] border-[#232323] border-[3px] object-contain "
               />
               <h1 className=" font-nunito font-bold text-[13px]">
                 {brend.title}

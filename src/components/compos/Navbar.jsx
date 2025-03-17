@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <div className="w-full">
       {/* Navbar */}
-      <div className=" z-[10000]  border-b-[2px] border-solid dark:border-black rounded-b-[15px] bg-[#232323] dark:bg-white  md:text-white dark:text-black flex justify-between py-[20px] items-center w-[100%] border-white px-[25px] md:px-[40px]  m-auto ">
+      <div className=" z-[10000000000000] sticky  top-0 border-b-[2px] border-solid dark:border-black rounded-b-[15px] bg-[#121212] dark:bg-white  md:text-white dark:text-black flex justify-between py-[20px] items-center w-[100%] border-white px-[25px] md:px-[40px]  m-auto ">
         <div>
           <h1 className=" font-kanit text-[22px] ">Deepal Cars</h1>
         </div>
