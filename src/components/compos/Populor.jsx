@@ -52,10 +52,10 @@ const Populor = () => {
                       delay: 0.2,
                     }}
                   >
-                    <h1 className="text-[19px] leading-6 uppercase font-bold font-nunito ">
+                    <h1 className="text-[20px] leading-6 uppercase font-bold font-nunito ">
                       {watch.brend}
                     </h1>
-                    <h1 className=" text-[12px]">{watch.rafcode}</h1>
+                    <h1 className=" text-[16px]">{watch.rafcode}</h1>
                   </motion.div>
                   {/* price */}
                   <motion.div
