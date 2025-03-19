@@ -102,7 +102,7 @@ const HamiltonDetails = () => {
         <a
           href="https://t.me/Bekhruz777"
           target="_blank"
-          className=" text-[23px] p-[5px] border-[2px] bg-green-600 rounded-[10px] border-black w-[100%] text-center "
+          className=" text-[18px] p-[5px] border-[2px] bg-green-600 rounded-[10px] border-black w-[100%] text-center "
         >
           Kупить
         </a>
@@ -127,7 +127,7 @@ const HamiltonDetails = () => {
       </motion.div>
 
       {/* //! Product details */}
-      <div className="mt-[40px] dark:bg-white bg-[#323232] py-[30px] gap-[17px] h-[80vh] justify-between dark:border-black border-white border-b-[3px] overflow-hidden relative rounded-b-[50px] border-solid md:p-[50px] p-[15px] flex flex-col">
+      <div className="mt-[40px] dark:bg-white bg-[#323232] py-[30px] gap-[17px] h-[86vh] justify-between dark:border-black border-white border-b-[3px] overflow-hidden relative rounded-b-[50px] border-solid md:p-[50px] p-[15px] flex flex-col">
         <div className=" flex flex-col gap-[20px]">
           {/* Logo */}
           <div className="flex gap-[5px] justify-between items-center">
