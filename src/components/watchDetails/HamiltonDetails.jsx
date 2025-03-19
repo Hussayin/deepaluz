@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { DetailContext } from "../context/DetailContext";
 import { FaChevronLeft } from "react-icons/fa";
@@ -8,17 +7,29 @@ import { TelegramContext } from "../context/TelegramContext";
 import { useNavigate } from "react-router-dom";
 import { FaTelegram } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { BsTelegram } from "react-icons/bs";
+import { BsBatteryCharging, BsTelegram } from "react-icons/bs";
 import { MdAddShoppingCart } from "react-icons/md";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Stilni import qilish
 import { BasketContext } from "../context/BasketContext";
+
+//* icons
+// import { BsBatteryCharging } from "react-icons/bs";
+import { GiSpeedometer } from "react-icons/gi";
+import { BsFuelPumpFill } from "react-icons/bs";
+import { LuBaggageClaim } from "react-icons/lu";
+import { GiBatteryPackAlt } from "react-icons/gi";
+import { TbEngine } from "react-icons/tb";
+import { TbAutomaticGearbox } from "react-icons/tb";
 
 const HamiltonDetails = () => {
   const { products } = useContext(DetailContext);
   const { id } = useParams();
   const { sendToTelegram } = useContext(TelegramContext);
   const navigate = useNavigate();
+
+  // Active image state
+  const [activeImage, setActiveImage] = useState("");
 
   const { addToCart } = useContext(BasketContext);
   // basket
@@ -41,10 +52,22 @@ const HamiltonDetails = () => {
     navigate(product.link); // Sahifani yangilamasdan navigatsiya
   };
 
-  // Ehtiyot chorasi: `products` va `Tissot` mavjudligini tekshirish
-  const product = products?.Hamilton?.find(
-    (watch) => String(watch.id) === String(id)
-  );
+  const [product, setProduct] = useState(null);
+  useEffect(() => {
+    if (products?.length) {
+      const foundProduct = products.find(
+        (item) => item.brend === "BYD" && String(item.id) === String(id)
+      );
+      setProduct(foundProduct || null);
+    }
+  }, [products, id]);
+
+  // On component load, set initial active image
+  useEffect(() => {
+    if (product) {
+      setActiveImage(product.Img); // Default to the first image
+    }
+  }, [product]);
 
   if (!product) {
     return (
@@ -56,14 +79,15 @@ const HamiltonDetails = () => {
 
   return (
     <div>
-      <div className="fixed w-[100%] top-0 z-[10000000] dark:bg-white dark:border-black bg-[#0f192b] border-[#cecccc85] border-solid border-b-[1px] p-[15px] px-[20px]">
-        <Link to="/hamilton">
+      <div className="fixed w-[100%] top-0 z-[10000000] dark:bg-white dark:border-black bg-[#323232] border-[#cecccc85] border-solid border-b-[1px] p-[15px] px-[20px]">
+        <Link to="/byd">
           <h1 className="flex items-center gap-[2px] font-bold font-nunito text-[17px]">
             <FaChevronLeft className="text-[25px]  " /> назад
           </h1>
         </Link>
       </div>
-      {/*//* button buy */}
+
+      {/*//! button buy */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +96,7 @@ const HamiltonDetails = () => {
           duration: 0.5, // Animatsiya davomiyligi
           delay: 0.1,
         }}
-        className=" fixed gap-[20px] px-[20px] py-[10px] dark:bg-white bg-[#0f192b]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-[2px] rounded-t-[20px] border-black p-[5px] "
+        className=" fixed gap-[20px] px-[20px] py-[10px] dark:bg-white bg-[#323232]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-white dark:border-t-white p-[5px] "
       >
         {/* buttons */}
         <a
@@ -102,55 +126,92 @@ const HamiltonDetails = () => {
         </div>
       </motion.div>
 
-      {/* Product details */}
-      <div className="mt-[40px] dark:bg-white bg-[#0f192b] py-[30px] gap-[17px] h-auto justify-center border-gray-950 border-b-[3px] overflow-hidden relative rounded-b-[50px] border-solid md:p-[50px] p-[15px] flex flex-col">
-        {/* Logo */}
-        <div className="flex gap-[5px] justify-between items-center">
-          <motion.img
+      {/* //! Product details */}
+      <div className="mt-[40px] dark:bg-white bg-[#323232] py-[30px] gap-[17px] h-[80vh] justify-between dark:border-black border-white border-b-[3px] overflow-hidden relative rounded-b-[50px] border-solid md:p-[50px] p-[15px] flex flex-col">
+        <div className=" flex flex-col gap-[20px]">
+          {/* Logo */}
+          <div className="flex gap-[5px] justify-between items-center">
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ ease: "easeOut", duration: 1.5 }}
+              src={product.logo}
+              alt="logo-brend"
+              className="rounded-lg bg-white w-[50px] text-center object-cover"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ ease: "easeOut", duration: 1.5 }}
+              className=" flex flex-col gap-[10px] "
+            >
+              <button onClick={handleAdd} className="text-[33px] pr-[10px] ">
+                <MdAddShoppingCart />
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Name and model */}
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeOut", duration: 1.5 }}
-            src={product.logo}
-            alt="logo-brend"
-            className="rounded-lg bg-white w-[90px] text-center object-cover"
-          />
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 1, // Animatsiya davomiyligi
-              delay: 0.2,
-            }}
-            className=" flex flex-col gap-[10px] "
+            className=" leading-6 mt-[10px] flex flex-col gap-[8px] "
           >
-            <button onClick={handleAdd} className="text-[33px] pr-[10px] ">
-              <MdAddShoppingCart />
-            </button>
+            <h1 className=" text-[27px] font-nunito font-bold ">
+              BYD HAN GREEN 5G
+            </h1>
+            <h1 className=" text-[25px] font-nunito ">Full electro</h1>
+            <h1 className=" font-nunito">Model: 2025</h1>
+            <h1 className=" text-[35px]">
+              <BsBatteryCharging />
+            </h1>
           </motion.div>
         </div>
 
-        {/* Title */}
+        {/* Images */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
             ease: "easeOut", // Easing funksiyasi
             duration: 1, // Animatsiya davomiyligi
             delay: 0.2,
           }}
-          className=" flex justify-center items-start gap-[10px] flex-col "
+          className=" absolute bottom-[130px] -right-[260px] h-auto "
         >
-          <h1 className="text-[22px] uppercase font-bold font-nunito leading-8">
-            {product.allTitle}
-          </h1>
-          <h1 className="text-[15px] uppercase opacity-75 ">
-            {product.production}
-          </h1>
+          {/* Main image */}
+          <img src={product.mainImage} alt="" className=" h-[260px] " />
         </motion.div>
 
-        {/* Images */}
-        <div className="flex my-[20px] flex-col gap-[30px] justify-center items-center w-[100%]">
+        {/* Price */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
+          className="flex justify-between items-center"
+        >
+          <div>
+            <h1 className="line-through opacity-55 leading-5 text-[20px]">
+              {product.demoPrice}$
+            </h1>
+            <h1 className="font-nunito text-[35px]">{product.price}$</h1>
+          </div>
+        </motion.div>
+      </div>
+
+      {/*//! product colors */}
+      <div className=" py-[20px] relative2 mt-[40px] rounded-[50px] border-white border-y-[2px] bg-[#323232] overflow-hidden">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 1.5 }}
+          className=" text-center text-[23px] font-kanit "
+        >
+          Mashinaning mavjud ranglari
+        </motion.h1>
+        {/* img */}
+        <div className="flex py-[20px] mt-[40px] my-[20px] flex-col gap-[50px] justify-center items-center w-[100%]">
           {/* Main image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -161,33 +222,60 @@ const HamiltonDetails = () => {
               delay: 0.2,
             }}
           >
-            <img
-              src={product.mainImage}
-              alt=""
-              className="md:h-[300px] h-[320px]"
+            <motion.img
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                ease: "easeOut", // Easing funksiyasi
+                duration: 1, // Animatsiya davomiyligi
+                delay: 0.2,
+              }}
+              src={activeImage}
+              alt="Active watch"
+              className="h-auto w-[400px]  "
             />
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1.5 }}
+            className={`  ${
+              product.col2 ? "grid-cols-2" : "grid-cols-5"
+            } flex gap-[10px] flex-wrap justify-center `}
+          >
+            {[
+              product.Img,
+              product.Img2,
+              product.Img3,
+              product.Img4,
+              product.Img5,
+              product.Img6,
+              product.Img7,
+              product.Img8,
+              product.Img9,
+              product.Img10,
+            ].map(
+              (img, index) =>
+                img && (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Watch ${index + 1}`}
+                    className={`md:h-[100px] md:w-auto w-[100px] object-contain h-[50px] border-2 ${
+                      activeImage === img
+                        ? "border-gray-500 p-[3px]  rounded-lg "
+                        : "border-transparent"
+                    }`}
+                    onClick={() => setActiveImage(img)}
+                  />
+                )
+            )}
+          </motion.div>
         </div>
-
-        {/* Price */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
-          className="flex justify-between items-center"
-        >
-          <div>
-            {/* <h1 className="line-through opacity-55 leading-5 text-[20px]">
-              {product.demoPrice}$
-            </h1> */}
-            <h1 className="font-nunito text-[35px]">{product.price}$</h1>
-          </div>
-          <h1 className="text-[15px]">Ref: {product.rafcode}</h1>
-        </motion.div>
       </div>
 
       {/* Product infos */}
-      <div className="mt-[50px] pb-[40px] py-[25px] dark:bg-white bg-[#0f192b] rounded-[50px] border-[2px]  border-gray-950  ">
+      <div className="mt-[40px] mb-[90px] pb-[40px] py-[25px] dark:bg-white bg-[#323232] rounded-[50px] border-y-[2px]  border-white  ">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -202,285 +290,162 @@ const HamiltonDetails = () => {
           transition={{ ease: "easeOut", duration: 1.5 }}
           className="text-center font-nunito text-[25px]"
         >
-          Больше информации
+          Mashinaning malumotlar
         </motion.h1>
         {/* infos */}
-        <div className=" flex justify-center items-start gap-[10px] flex-col p-[10px] pt-[20px] ">
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.05,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Марка:</h1>
-            <h1>{product.brend}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.06,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Модель:</h1>
-            <h1>{product.allTitle}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.07,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Hомер:</h1>
-            <h1>{product.rafcode}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.08,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Механизм:</h1>
-            <h1>{product.mechanism}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.09,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Материал:</h1>
-            <h1>{product.caseMaterial}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.1,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Ремешок:</h1>
-            <h1>{product.bracelet}</h1>
-          </motion.div>
-          {/*  */}
-          {/* <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.1,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Год выпуска:</h1>
-            <h1>{product.year}</h1>
-          </motion.div> */}
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.1,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Состояние:</h1>
-            <h1>{product.status}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.1,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Гарантия:</h1>
-            <h1>{product.guarantee}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.1,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Водозащита:</h1>
-            <h1>{product.toWater}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.1,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Стекло:</h1>
-            <h1>{product.glass}</h1>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut", // Easing funksiyasi
-              duration: 0.6, // Animatsiya davomiyligi
-              delay: 0.1,
-            }}
-            className=" text-[20px] flex gap-[13px] items-center "
-          >
-            <h1>- Диаметр:</h1>
-            <h1>{product.diameter}</h1>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* similar */}
-      <div className="mt-[25px] mb-[70px] ">
-        <motion.h1
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{
-            ease: "easeOut", // Easing funksiyasi
-            duration: 1, // Animatsiya davomiyligi
-            delay: 0.2,
-          }}
-          className=" text-[25px] font-nunito ml-[18px] "
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 2 }}
+          className=" mt-[40px] grid md:grid-cols-4 grid-cols-2 place-items-center gap-[20px] place-content-between "
         >
-          Похожий часы
-        </motion.h1>
-        {/* similar products */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]  p-[5px]">
-          {products?.Hamilton.filter(
-            (item) =>
-              item.categori === product.categori && item.id !== product.id
-          ).map((watch) => (
-            <Link
-              onClick={(e) => {
-                e.preventDefault(); // Sahifa refresh qilinishini to'xtatadi
-                handleProductClick(watch); // Product-ning onClick hodisasi
-              }}
-              key={watch.id}
-              to={watch.link}
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ ease: "easeOut", duration: 1.5 }}
-                className=" flex justify-between items-center border-[#25365a] dark:bg-white bg-[#0e1629] overflow-hidden relative rounded-[20px] border-[2px] border-solid  p-[10px]"
-              >
-                {/* text */}
-                <div className=" flex flex-col justify-between gap-[23px] ">
-                  {/* logo */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.1,
-                    }}
-                    className=" flex gap-[10px] items-center "
-                  >
-                    <img
-                      src={watch.logo}
-                      alt="logo-brend"
-                      className={` ${watch.logoWidth} ${watch.logoColor} ${watch.logoPa} rounded-lg object-cover`}
-                    />
-                  </motion.div>
-                  {/* title */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.2,
-                    }}
-                  >
-                    <h1 className="text-[19px] leading-6 uppercase font-bold font-nunito ">
-                      {watch.title}
-                    </h1>
-                    <h1 className=" text-[12px]">{watch.allTitle}</h1>
-                  </motion.div>
-                  {/* price */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.3,
-                    }}
-                  >
-                    {/* <h1 className="line-through leading-3 opacity-80 ">
-                      {watch.demoPrice}$
-                    </h1> */}
-                    <h1 className="font-kanit text-[27px]">{watch.price}$</h1>
-                  </motion.div>
-                </div>
-                {/* img */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    ease: "easeOut", // Easing funksiyasi
-                    duration: 1, // Animatsiya davomiyligi
-                    delay: 0.2,
-                  }}
-                >
-                  <img
-                    src={watch.mainImage}
-                    alt="image-product-watch"
-                    className=" h-[200px] "
-                  />
-                </motion.div>
-              </motion.div>
-            </Link>
-          ))}
-        </div>
+          {/*  */}
+          <div className=" flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[45px]">
+                <GiSpeedometer />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">0-100 km/s</h1>
+              <h1 className=" p-[0] leading-3 text-[20px]">4s</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className=" flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[35px]">
+                <BsFuelPumpFill />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">Yoqilg'i sarfi</h1>
+              <h1 className=" p-[0] leading-3 text-[20px]">90L</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className=" w-[120px] flex items-center  gap-[7px] ">
+            <div>
+              <h1 className=" text-[45px]">
+                <GiSpeedometer />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">ot kuchi</h1>
+              <h1 className=" p-[0] leading-4 text-[20px]">5000</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className=" flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[40px]">
+                <LuBaggageClaim />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">Yukxona hajmi</h1>
+              <h1 className=" p-[0] leading-4 text-[18px]">100L</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className="w-[120px] flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[40px]">
+                <GiBatteryPackAlt />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">Quvvati</h1>
+              <h1 className=" p-[0] leading-3 text-[20px]">500</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className=" flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[45px]">
+                <TbEngine />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">Dvigitel turi</h1>
+              <h1 className=" p-[0] leading-4 text-[20px]">3.3</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className=" flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[45px]">
+                <TbAutomaticGearbox />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">0-100 km/s</h1>
+              <h1 className=" p-[0] leading-4 text-[20px]">19</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className=" flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[45px]">
+                <GiSpeedometer />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">0-100 km/s</h1>
+              <h1 className=" p-[0] leading-3 text-[20px]">7</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className=" flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[45px]">
+                <GiSpeedometer />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">0-100 km/s</h1>
+              <h1 className=" p-[0] leading-3 text-[20px]">5s</h1>
+            </div>
+          </div>
+          {/*  */}
+          <div className=" flex items-center gap-[7px] ">
+            <div>
+              <h1 className=" text-[45px]">
+                <GiSpeedometer />
+              </h1>
+            </div>
+            <div>
+              <h1 className=" opacity-75 text-[13px]">0-100 km/s</h1>
+              <h1 className=" p-[0] leading-3 text-[20px]">5s</h1>
+            </div>
+          </div>
+        </motion.div>
+        {/*  */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 2 }}
+          className=" mt-[35px] text-center leading-5 grid grid-cols-2 gap-[15px]"
+        >
+          <div>
+            <h1 className=" font-bold text-[20px] font-nunito ">Kengligi:</h1>
+            <h1 className=" text-[15px]">2.2</h1>
+          </div>
+          <div>
+            <h1 className=" font-bold text-[20px] font-nunito">Uzunligi:</h1>
+            <h1>3.5</h1>
+          </div>
+          <div>
+            <h1 className=" font-bold text-[20px] font-nunito ">Balandligi:</h1>
+            <h1>1.7</h1>
+          </div>
+          <div>
+            <h1 className=" font-bold text-[20px] font-nunito ">
+              Balo'n o'lchami:
+            </h1>
+            <h1>5.5</h1>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

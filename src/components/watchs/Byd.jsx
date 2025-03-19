@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { ProductContext } from "../context/ProductContext";
 import { TelegramContext } from "../context/TelegramContext";
 
-const categories = ["All"];
+const categories = ["All", "HYBRID"];
 
-const Hamilton = () => {
+const BydCars = () => {
   const { sendToTelegram } = useContext(TelegramContext);
   const { products, loading } = useContext(ProductContext);
 
@@ -18,14 +18,15 @@ const Hamilton = () => {
   const [openFilter, setOpenFilter] = useState(false);
 
   if (loading) return <div>Ma'lumotlar yuklanmoqda...</div>;
-  if (!products?.Hamilton || products.Hamilton.length === 0)
-    return <div>Maurice mahsulotlari topilmadi.</div>;
+  if (!products || products.length === 0)
+    return <div>BYD mashinalari topilmadi.</div>;
 
-  const filteredProducts = products?.Hamilton?.filter((watch) => {
-    const productPrice = Number(watch.price) || 0;
+  const filteredProducts = products.filter((car) => {
+    const productPrice = Number(car.price) || 0;
     return (
+      car.brend === "BYD" &&
       (activeCategory === "All" ||
-        watch.categori?.toLowerCase() === activeCategory.toLowerCase()) &&
+        car.categori?.toLowerCase() === activeCategory.toLowerCase()) &&
       productPrice >= minPrice &&
       productPrice <= maxPrice
     );
@@ -38,7 +39,7 @@ const Hamilton = () => {
 
   return (
     <div>
-      <div className="sticky top-0 z-[10000000] flex flex-col gap-[10px] dark:bg-white bg-[#232323] p-[15px] px-[13px] border-[#444343] border-b-[2px] ">
+      <div className="sticky top-0 z-[10000000] flex flex-col gap-[10px] dark:bg-white bg-[#232323] p-[15px] px-[13px] border-[#444343] border-b-[2px]">
         <Link to="/" className="">
           <h1 className="flex items-center gap-[2px] font-bold font-nunito text-[17px]">
             <FaChevronLeft className="text-[28px]" /> назад
@@ -46,7 +47,7 @@ const Hamilton = () => {
         </Link>
       </div>
 
-      <div className="flex gap-[13px] overflow-x-scroll dark:bg-white bg-[#232323] p-[10px] hide-scrollbar border-b-2 border-[#444343] ">
+      <div className="flex gap-[13px] overflow-x-scroll dark:bg-white bg-[#232323] p-[10px] hide-scrollbar border-b-2 border-[#444343]">
         <button
           onClick={() => setOpenFilter(true)}
           className="px-[15px] py-[5px] rounded-full text-sm font-semibold whitespace-nowrap transition-all bg-blue-500"
@@ -89,80 +90,59 @@ const Hamilton = () => {
       )}
 
       <div className="mt-[10px] mb-[15px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-[10px] w-[97%] m-auto">
-        {filteredProducts.map((watch) => (
-          <div onClick={() => handleProductClick(watch)} key={watch.id}>
-            <Link to={`/hamilton/${watch.id}`}>
+        {filteredProducts.map((car) => (
+          <div onClick={() => handleProductClick(car)} key={car.id}>
+            <Link to={car.id}>
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ ease: "easeOut", duration: 1.5 }}
-                className=" flex justify-between items-center border-[#191919] dark:bg-white bg-[#323232] overflow-hidden relative rounded-[20px] border-[3px] border-solid px-[13px]  py-[15px]"
+                className="flex justify-between items-center border-[#191919] dark:bg-white bg-[#323232] overflow-hidden relative rounded-[20px] border-[3px] border-solid px-[13px] py-[15px]"
               >
-                {/* text */}
-                <div className=" flex flex-col justify-between gap-[23px] ">
-                  {/* logo */}
+                <div className="flex flex-col justify-between gap-[23px]">
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.1,
-                    }}
-                    className=" flex gap-[10px] items-center "
+                    transition={{ ease: "easeOut", duration: 1, delay: 0.1 }}
+                    className="flex gap-[10px] items-center"
                   >
                     <img
-                      src={watch.logo}
+                      src={car.logo}
                       alt="logo-brend"
-                      className={` w-[50px] ${watch.logoColor} ${watch.logoPa} bg-black rounded-[50%] object-cover`}
+                      className={`w-[50px] bg-black rounded-[50%] object-cover`}
                     />
                   </motion.div>
-                  {/* title */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.2,
-                    }}
+                    transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
                   >
-                    <h1 className="text-[20px] leading-6 uppercase font-bold font-nunito ">
-                      {watch.brend}
+                    <h1 className="text-[20px] leading-6 uppercase font-bold font-nunito">
+                      {car.brend}
                     </h1>
-                    <h1 className=" text-[16px]">{watch.rafcode}</h1>
+                    <h1 className="text-[16px]">{car.rafcode}</h1>
                   </motion.div>
-                  {/* price */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.3,
-                    }}
+                    transition={{ ease: "easeOut", duration: 1, delay: 0.3 }}
                   >
-                    <h1 className="font-kanit text-[17px] leading-3 opacity-70 line-through ">
-                      {watch.demoPrice}$
+                    <h1 className="font-kanit text-[17px] leading-3 opacity-70 line-through">
+                      {car.demoPrice}$
                     </h1>
-                    <h1 className="font-kanit text-[27px]">{watch.price}$</h1>
+                    <h1 className="font-kanit text-[27px]">{car.price}$</h1>
                   </motion.div>
                 </div>
-                {/* img */}
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    ease: "easeOut", // Easing funksiyasi
-                    duration: 1, // Animatsiya davomiyligi
-                    delay: 0.2,
-                  }}
-                  className={`absolute ${watch.right} `}
+                  transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
+                  className={`absolute ${car.right}`}
                 >
                   <img
-                    src={watch.mainImage}
-                    alt="image-product-watch"
-                    className=" h-[180px]"
+                    src={car.mainImage}
+                    alt="image-product-car"
+                    className="h-[180px]"
                   />
                 </motion.div>
               </motion.div>
@@ -174,4 +154,4 @@ const Hamilton = () => {
   );
 };
 
-export default Hamilton;
+export default BydCars;

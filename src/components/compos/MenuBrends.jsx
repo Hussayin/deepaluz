@@ -6,7 +6,7 @@ const MenuBrends = () => {
   return (
     <Swiper
       // spaceBetween={5}
-      slidesPerView={3.7}
+      slidesPerView={4.2}
       //   onSlideChange={() => console.log("Slide Change")}
       //   onSwiper={(swiper) => console.log(swiper)}
       className=" md:hidden block pb-[7px]  mx-[3px] font-kanit dark:bg-white bg-[#323232] border-[#1c1c1c] border-[2px]  mt-[7px] rounded-2xl px-[3px] py-[7px] "

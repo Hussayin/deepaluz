@@ -6,8 +6,8 @@ import InstallPrompt from "./InstallModal";
 import Basket from "./Basket";
 import { ToastContainer } from "react-toastify"; // Toastni qo'shamiz
 import "react-toastify/dist/ReactToastify.css"; // Toast stilini import qilamiz
-import Hamilton from "../watchs/Hamilton";
 import HamiltonDetails from "../watchDetails/HamiltonDetails";
+import BydCars from "../watchs/Byd";
 
 const App = () => {
   return (
@@ -22,8 +22,8 @@ const App = () => {
           {/* basket */}
           <Route path="/basket" element={<Basket />} />
           {/* hamilton */}
-          <Route path="/hamilton" element={<Hamilton />} />
-          <Route path="/hamilton/:id" element={<HamiltonDetails />} />
+          <Route path="/byd" element={<BydCars />} />
+          <Route path="/byd/:id" element={<HamiltonDetails />} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>
