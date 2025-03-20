@@ -179,20 +179,98 @@ export const AllWatchs = [
     price: "55.000",
     mainImage:
       "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
-    link360: "https://bydauto.uz/media/1678467749_772.webp",
+    link360:
+      "https://m.dcdapp.com/motor/inapp/pano-new/inner.html?series_id=4300",
+    typeData: [
+      {
+        id: 1,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
+        title: "BUY HON 1",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 2,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
+        title: "BYD HON 2",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 3,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
+        title: "BYD HUN 3",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+    ],
+    img1: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/98a609ee16c85171cb0b6792ee1d894f~512x0.webp",
+    img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c0fa53e3abeab1f5dbd33966b2bdbaee~512x0.webp",
+    img3: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/932413a4a925bbbdd878b147281567ab~512x0.webp",
+    img4: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/48814cacab4d44ccf577a4178a3ba46a~512x0.webp",
+    img5: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/bd0b02bfd121e7ddfe9b54484c611c53~512x0.webp",
+    img6: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/df9a62d794175eaf33cb48863be1d5d6~512x0.webp",
+    img7: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/5dcf0997ffa7e652bc7af69b7beb1d4c~512x0.webp",
   },
   {
     id: "2",
+    Img: "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
+    Img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
+    Img3: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
     logo: "https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg",
     logoWidth: "w-[40px]",
-    right: "-right-[190px]",
+    right: "-right-[220px]",
     title: "BYD ELECTRO CAR",
-    rafcode: "BYD SPORT PRO",
+    rafcode: "BYD HON PRO",
     brend: "BYD",
     demoPrice: "60.000",
     price: "55.000",
     mainImage:
       "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
+    link360:
+      "https://m.dcdapp.com/motor/inapp/pano-new/inner.html?series_id=4300",
+    typeData: [
+      {
+        id: 1,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
+        title: "BUY HON 1",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 2,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
+        title: "BYD HON 2",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 3,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
+        title: "BYD HUN 3",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+    ],
+    img1: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/98a609ee16c85171cb0b6792ee1d894f~512x0.webp",
+    img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c0fa53e3abeab1f5dbd33966b2bdbaee~512x0.webp",
+    img3: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/932413a4a925bbbdd878b147281567ab~512x0.webp",
+    img4: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/48814cacab4d44ccf577a4178a3ba46a~512x0.webp",
+    img5: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/bd0b02bfd121e7ddfe9b54484c611c53~512x0.webp",
+    img6: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/df9a62d794175eaf33cb48863be1d5d6~512x0.webp",
+    img7: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/5dcf0997ffa7e652bc7af69b7beb1d4c~512x0.webp",
   },
   {
     id: "3",
