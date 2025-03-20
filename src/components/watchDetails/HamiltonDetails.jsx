@@ -27,6 +27,7 @@ const HamiltonDetails = () => {
   const { id } = useParams();
   const { sendToTelegram } = useContext(TelegramContext);
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   // Active image state
   const [activeImage, setActiveImage] = useState("");
@@ -78,7 +79,7 @@ const HamiltonDetails = () => {
   }
 
   return (
-    <div>
+    <div className=" mb-[90px] ">
       <div className="fixed w-[100%] top-0 z-[10000000] dark:bg-white dark:border-black bg-[#323232] border-[#cecccc85] border-solid border-b-[1px] p-[15px] px-[20px]">
         <Link to="/byd">
           <h1 className="flex items-center gap-[2px] font-bold font-nunito text-[17px]">
@@ -274,8 +275,8 @@ const HamiltonDetails = () => {
         </div>
       </div>
 
-      {/* Product infos */}
-      <div className="mt-[40px] mb-[90px] pb-[40px] py-[25px] dark:bg-white bg-[#323232] rounded-[50px] border-y-[2px]  border-white  ">
+      {/*//! Product infos */}
+      <div className="mt-[40px] mb-[40px] pb-[40px] py-[25px] dark:bg-white bg-[#323232] rounded-[50px] border-y-[2px]  border-white  ">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -447,6 +448,47 @@ const HamiltonDetails = () => {
           </div>
         </motion.div>
       </div>
+
+      {/*//! wiev 360 */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ ease: "easeOut", duration: 2 }}
+        onClick={() => setOpen(true)}
+        className="py-[20px] px-[15px] border-y-[2px] border-solid border-white rounded-[50px] "
+      >
+        <h1 className=" text-center font-nunito leading-6 text-[22px]">
+          360° aylanada ichki qisimni kuzatish
+        </h1>
+        <div className=" relative mt-[20px] flex justify-center items-center ">
+          <img
+            src="https://bydauto.uz/media/1678467749_772.webp"
+            alt=""
+            className="rounded-[40px]"
+          />
+          <img
+            src="https://static.tildacdn.one/tild6163-6331-4138-a138-653439646561/343444.png"
+            alt=""
+            className=" absolute bottom-[60px] h-[100px] "
+          />
+        </div>
+      </motion.div>
+      {/*//! 360 wiev */}
+      {open && (
+        <div className="bg-black flex justify-center items-center w-[100%] h-[100vh] fixed top-0 z-[1000000000000000]">
+          <h1 className=" absolute ">Iltmos kutib turing</h1>
+          <div
+            onClick={() => setOpen(false)}
+            className=" uppercase z-[10000] absolute top-[10px] text-[20px] font-nunito bg-red-600 py-[10px] px-[30px] rounded-lg "
+          >
+            <h1>Orqaga</h1>
+          </div>
+          <iframe
+            src={product.link360}
+            className=" w-[100%] z-[1000] h-[100%] "
+          ></iframe>
+        </div>
+      )}
     </div>
   );
 };

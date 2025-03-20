@@ -169,7 +169,6 @@ export const AllWatchs = [
     Img: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
     Img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
     Img3: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
-
     logo: "https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg",
     logoWidth: "w-[40px]",
     right: "-right-[220px]",
@@ -180,6 +179,7 @@ export const AllWatchs = [
     price: "55.000",
     mainImage:
       "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
+    link360: "https://bydauto.uz/media/1678467749_772.webp",
   },
   {
     id: "2",
