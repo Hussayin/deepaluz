@@ -7,7 +7,7 @@ export const TelegramContext = createContext();
 // Telegramga yuborish funksiyasi
 const sendToTelegram = async (product) => {
   const BOT_TOKEN = "7504815356:AAFgOfrQsr6TDqydE9z19VJ3uMXR-5Dkdrg"; // O'zingizning Telegram bot tokeningizni yozing
-  const CHAT_ID = "@OurUsersWatch"; // Telegram chat ID
+  const CHAT_ID = "@OurUsersWatchh"; // Telegram chat ID
   const MESSAGE = `
 🛒 *Product Info:*
 - *Title:* ${product.title}
