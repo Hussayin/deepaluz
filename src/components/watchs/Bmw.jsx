@@ -8,7 +8,7 @@ import { TelegramContext } from "../context/TelegramContext";
 
 const categories = ["All", "HYBRID", "ELECTRO"];
 
-const BydCars = () => {
+const Bmw = () => {
   const { sendToTelegram } = useContext(TelegramContext);
   const { products, loading } = useContext(ProductContext);
 
@@ -24,7 +24,7 @@ const BydCars = () => {
   const filteredProducts = products.filter((car) => {
     const productPrice = Number(car.price) || 0;
     return (
-      car.brend === "BYD" &&
+      car.brend === "BMW" &&
       (activeCategory === "All" ||
         car.categori?.toLowerCase() === activeCategory.toLowerCase()) &&
       productPrice >= minPrice &&
@@ -154,4 +154,4 @@ const BydCars = () => {
   );
 };
 
-export default BydCars;
+export default Bmw;

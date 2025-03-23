@@ -6,24 +6,39 @@ import InstallPrompt from "./InstallModal";
 import Basket from "./Basket";
 import { ToastContainer } from "react-toastify"; // Toastni qo'shamiz
 import "react-toastify/dist/ReactToastify.css"; // Toast stilini import qilamiz
-import HamiltonDetails from "../watchDetails/HamiltonDetails";
 import BydCars from "../watchs/Byd";
+import ScrollManager from "./ScrollManager";
+import BydDetails from "../watchDetails/BydDetailes";
+import LixingDetails from "../watchDetails/LixingDetails";
+import Lixing from "../watchs/Lixing";
+import Hongqi from "../watchs/Hongqi";
+import Bmw from "../watchs/Bmw";
+import BmwDetails from "../watchDetails/BmwDetails";
 
 const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
         {/* <HelmetProvider> */}
-        {/* <ScrollManager /> */}
+        <ScrollManager />
         <InstallPrompt />
         {/* <ScrollToTop /> */}
         <Routes>
           <Route path="/" element={<Enter />} />
           {/* basket */}
           <Route path="/basket" element={<Basket />} />
-          {/* hamilton */}
+          {/* BYD */}
           <Route path="/byd" element={<BydCars />} />
-          <Route path="/byd/:id" element={<HamiltonDetails />} />
+          <Route path="/byd/:id" element={<BydDetails />} />
+          {/* Lixing */}
+          <Route path="/lixing" element={<Lixing />} />
+          <Route path="/lixing/:id" element={<LixingDetails />} />
+          {/* Hongqi */}
+          <Route path="/hongqi" element={<Hongqi />} />
+          <Route path="/hongqi/:id" element={<LixingDetails />} />
+          {/* BMW */}
+          <Route path="/bmw" element={<Bmw />} />
+          <Route path="/bmw/:id" element={<BmwDetails />} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>

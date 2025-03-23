@@ -24,7 +24,7 @@ import { GiBatteryPackAlt } from "react-icons/gi";
 import { TbEngine } from "react-icons/tb";
 import { TbAutomaticGearbox } from "react-icons/tb";
 
-const HamiltonDetails = () => {
+const LixingDetails = () => {
   const { products } = useContext(DetailContext);
   const { id } = useParams();
   const { sendToTelegram } = useContext(TelegramContext);
@@ -749,28 +749,4 @@ const HamiltonDetails = () => {
   );
 };
 
-export default HamiltonDetails;
-
-// const TypeData = [
-//   {
-//     id: 1,
-//     title: "It is title 1",
-//     content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-//               aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
-//               fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
-//   },
-//   {
-//     id: 2,
-//     title: "It is title 2",
-//     content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-//               aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
-//               fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
-//   },
-//   {
-//     id: 3,
-//     title: "It is title 3",
-//     content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-//               aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
-//               fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
-//   },
-// ];
+export default LixingDetails;
