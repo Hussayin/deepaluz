@@ -15,6 +15,10 @@ import Hongqi from "../watchs/Hongqi";
 import Bmw from "../watchs/Bmw";
 import BmwDetails from "../watchDetails/BmwDetails";
 import HongqiDetails from "../watchDetails/HongqiDetail";
+import DeepalCars from "../watchs/Deepal";
+import DeepalDetails from "../watchDetails/DeepalDetails";
+import Jetour from "../watchs/Jetour";
+import JetourDetails from "../watchDetails/JetourDetails";
 
 const App = () => {
   return (
@@ -40,6 +44,12 @@ const App = () => {
           {/* BMW */}
           <Route path="/bmw" element={<Bmw />} />
           <Route path="/bmw/:id" element={<BmwDetails />} />
+          {/* DEEPAL */}
+          <Route path="/deepal" element={<DeepalCars />} />
+          <Route path="/deepal/:id" element={<DeepalDetails />} />
+          {/* Jetour */}
+          <Route path="/jetour" element={<Jetour />} />
+          <Route path="/jetour/:id" element={<JetourDetails />} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>
