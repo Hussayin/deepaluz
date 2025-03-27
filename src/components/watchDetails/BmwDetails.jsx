@@ -190,7 +190,7 @@ const BmwDetails = () => {
             duration: 1, // Animatsiya davomiyligi
             delay: 0.2,
           }}
-          className=" absolute bottom-[130px] -right-[270px] h-auto "
+          className=" absolute bottom-[130px] -right-[290px] h-auto "
         >
           {/* Main image */}
           <img src={product.mainImage} alt="" className=" h-[260px] " />

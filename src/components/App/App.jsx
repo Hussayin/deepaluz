@@ -14,6 +14,7 @@ import Lixing from "../watchs/Lixing";
 import Hongqi from "../watchs/Hongqi";
 import Bmw from "../watchs/Bmw";
 import BmwDetails from "../watchDetails/BmwDetails";
+import HongqiDetails from "../watchDetails/HongqiDetail";
 
 const App = () => {
   return (
@@ -35,7 +36,7 @@ const App = () => {
           <Route path="/lixing/:id" element={<LixingDetails />} />
           {/* Hongqi */}
           <Route path="/hongqi" element={<Hongqi />} />
-          <Route path="/hongqi/:id" element={<LixingDetails />} />
+          <Route path="/hongqi/:id" element={<HongqiDetails />} />
           {/* BMW */}
           <Route path="/bmw" element={<Bmw />} />
           <Route path="/bmw/:id" element={<BmwDetails />} />

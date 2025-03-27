@@ -1,7 +1,35 @@
-import { hamiltonLogo } from "../../assets/Images";
+import { deepalicon } from "../../assets/Images";
 
 //! data for populor products
 export const PopulorWatch = [
+  {
+    id: "10",
+    logo: deepalicon,
+    link: "/deepal",
+    logoWidth: "w-[40px]",
+    right: "-right-[140px]",
+    title: "PR516 CHRONOGRAPH",
+    rafcode: "Deepal Pro 7",
+    brend: "DEEPAL",
+    demoPrice: "60.000",
+    price: "55.000",
+    mainImage:
+      "https://citycar-base.netlify.app/deepal/68f2965f69fe4c749c59e51d3641360d_1200x0__1_-removebg-preview.webp",
+  },
+  {
+    id: "9",
+    logo: deepalicon,
+    link: "/deepal",
+    logoWidth: "w-[40px]",
+    right: "-right-[200px]",
+    title: "PR516 CHRONOGRAPH",
+    rafcode: "Deepal Pro 7",
+    brend: "DEEPAL",
+    demoPrice: "60.000",
+    price: "55.000",
+    mainImage:
+      "https://citycar-base.netlify.app/deepal/d4131736584240acac52b0c62c576fa8_1200x0__1_-removebg-preview.webp",
+  },
   {
     id: "1",
     logo: "https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg",
@@ -132,6 +160,12 @@ export const watchBrends = [
     title: "LIXING",
   },
   {
+    id: "5",
+    link: "/deepal",
+    image: deepalicon,
+    title: "DEEPAL",
+  },
+  {
     id: "3",
     link: "/hongqi",
     image:
@@ -140,13 +174,6 @@ export const watchBrends = [
   },
   {
     id: "4",
-    link: "/bmw",
-    image:
-      "https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg",
-    title: "BMW",
-  },
-  {
-    id: "5",
     link: "/bmw",
     image:
       "https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg",
@@ -836,7 +863,7 @@ export const AllWatchs = [
     Img: "https://resonant-otter-27f548.netlify.app/hongi/Hongqi%20E-HS9/7898ffd5549f4a1089251d066ef2ce1b_1200x0-removebg-preview%20(1).png",
     Img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
     Img3: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
-    logo: "https://ae01.alicdn.com/kf/S3c5da90925cb4bf19b00bf1afe904276R.jpg_960x960.jpg",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDnnxaCc3jqlyIn2TVvlXCEryvER4bPXcL1Q&s",
     logoWidth: "w-[40px]",
     right: "-right-[180px]",
     categori: "ELECTRO",
@@ -891,7 +918,7 @@ export const AllWatchs = [
     Img: "https://resonant-otter-27f548.netlify.app/hongi/Hongqi%20E-QM5/4710449b1348d91574506d6073be1e73_1200x0__1_-removebg-preview%20(1).png",
     Img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
     Img3: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
-    logo: "https://ae01.alicdn.com/kf/S3c5da90925cb4bf19b00bf1afe904276R.jpg_960x960.jpg",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDnnxaCc3jqlyIn2TVvlXCEryvER4bPXcL1Q&s",
     logoWidth: "w-[40px]",
     right: "-right-[200px]",
     categori: "ELECTRO",
@@ -946,7 +973,7 @@ export const AllWatchs = [
     Img: "https://resonant-otter-27f548.netlify.app/hongi/Hongqi%20Guoya/b743fbbdc4d44c458ec95b2345190bec_1200x0-removebg-preview%20(1).png",
     Img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
     Img3: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
-    logo: "https://ae01.alicdn.com/kf/S3c5da90925cb4bf19b00bf1afe904276R.jpg_960x960.jpg",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDnnxaCc3jqlyIn2TVvlXCEryvER4bPXcL1Q&s",
     logoWidth: "w-[40px]",
     right: "-right-[230px]",
     categori: "ELECTRO",
@@ -1068,6 +1095,172 @@ export const AllWatchs = [
     price: "55.000",
     mainImage:
       "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi4/6b67c0679f7bf01bf2712f4e17a8ab04_1200x0-removebg-preview%20(1).png",
+    link360:
+      "https://m.dcdapp.com/motor/inapp/pano-new/inner.html?series_id=118",
+    typeData: [
+      {
+        id: 1,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/LIXIING/li6/ef28fc1cb25c4e96b78b4e7eb3a8a390_1200x0-removebg-preview%20(1).png",
+        title: "LIXING 70L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 2,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
+        title: "LIXING 80L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 3,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
+        title: "LIXING 100L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+    ],
+    img1: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/98a609ee16c85171cb0b6792ee1d894f~512x0.webp",
+    img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c0fa53e3abeab1f5dbd33966b2bdbaee~512x0.webp",
+    img3: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/932413a4a925bbbdd878b147281567ab~512x0.webp",
+    img4: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/48814cacab4d44ccf577a4178a3ba46a~512x0.webp",
+    img5: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/bd0b02bfd121e7ddfe9b54484c611c53~512x0.webp",
+    img6: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/df9a62d794175eaf33cb48863be1d5d6~512x0.webp",
+    img7: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/5dcf0997ffa7e652bc7af69b7beb1d4c~512x0.webp",
+  },
+  {
+    id: "18",
+    Img: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi5/4fb1dbdd4c874056a499b1d3fd21d548_1200x0-removebg-preview%20(1).png",
+    Img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
+    Img3: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
+    logo: "https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg",
+    logoWidth: "w-[40px]",
+    right: "-right-[230px]",
+    categori: "ELECTRO",
+    title: "BMW",
+    rafcode: "BMW I4 PRO",
+    brend: "BMW",
+    demoPrice: "60.000",
+    price: "55.000",
+    mainImage:
+      "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi5/4fb1dbdd4c874056a499b1d3fd21d548_1200x0-removebg-preview%20(1).png",
+    link360:
+      "https://m.dcdapp.com/motor/inapp/pano-new/inner.html?series_id=118",
+    typeData: [
+      {
+        id: 1,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/LIXIING/li6/ef28fc1cb25c4e96b78b4e7eb3a8a390_1200x0-removebg-preview%20(1).png",
+        title: "LIXING 70L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 2,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
+        title: "LIXING 80L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 3,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
+        title: "LIXING 100L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+    ],
+    img1: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/98a609ee16c85171cb0b6792ee1d894f~512x0.webp",
+    img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c0fa53e3abeab1f5dbd33966b2bdbaee~512x0.webp",
+    img3: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/932413a4a925bbbdd878b147281567ab~512x0.webp",
+    img4: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/48814cacab4d44ccf577a4178a3ba46a~512x0.webp",
+    img5: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/bd0b02bfd121e7ddfe9b54484c611c53~512x0.webp",
+    img6: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/df9a62d794175eaf33cb48863be1d5d6~512x0.webp",
+    img7: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/5dcf0997ffa7e652bc7af69b7beb1d4c~512x0.webp",
+  },
+  {
+    id: "19",
+    Img: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi7/21016c9ff58d4a9c834c5909a578b8ea_1200x0-removebg-preview%20(1).png",
+    Img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
+    Img3: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
+    logo: "https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg",
+    logoWidth: "w-[40px]",
+    right: "-right-[230px]",
+    categori: "ELECTRO",
+    title: "BMW",
+    rafcode: "BMW I4 PRO",
+    brend: "BMW",
+    demoPrice: "60.000",
+    price: "55.000",
+    mainImage:
+      "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi7/21016c9ff58d4a9c834c5909a578b8ea_1200x0-removebg-preview%20(1).png",
+    link360:
+      "https://m.dcdapp.com/motor/inapp/pano-new/inner.html?series_id=118",
+    typeData: [
+      {
+        id: 1,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/LIXIING/li6/ef28fc1cb25c4e96b78b4e7eb3a8a390_1200x0-removebg-preview%20(1).png",
+        title: "LIXING 70L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 2,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
+        title: "LIXING 80L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+      {
+        id: 3,
+        typeImg:
+          "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
+        title: "LIXING 100L PRO",
+        content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                  aliquam eligendi unde mollitia officiis sequi dolor, sint ut cum,
+                  fugit quaerat est nulla illum vel laudantium deserunt eos sit ex!`,
+      },
+    ],
+    img1: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/98a609ee16c85171cb0b6792ee1d894f~512x0.webp",
+    img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c0fa53e3abeab1f5dbd33966b2bdbaee~512x0.webp",
+    img3: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/932413a4a925bbbdd878b147281567ab~512x0.webp",
+    img4: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/48814cacab4d44ccf577a4178a3ba46a~512x0.webp",
+    img5: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/bd0b02bfd121e7ddfe9b54484c611c53~512x0.webp",
+    img6: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/df9a62d794175eaf33cb48863be1d5d6~512x0.webp",
+    img7: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/5dcf0997ffa7e652bc7af69b7beb1d4c~512x0.webp",
+  },
+  //! DEEPAL
+  {
+    id: "20",
+    Img: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi7/21016c9ff58d4a9c834c5909a578b8ea_1200x0-removebg-preview%20(1).png",
+    Img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/han/c88bc30e03db42dca2e3aefeb1597b0a_1200x0__1_-removebg-preview%20(1).png",
+    Img3: "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi3/4ed77223b6764ae0b6d9e0e2e2edee57_1200x0-removebg-preview%20(1).png",
+    logo: "https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg",
+    logoWidth: "w-[40px]",
+    right: "-right-[230px]",
+    categori: "ELECTRO",
+    title: "BMW",
+    rafcode: "BMW I4 PRO",
+    brend: "DEEPAL",
+    demoPrice: "60.000",
+    price: "55.000",
+    mainImage:
+      "https://resonant-otter-27f548.netlify.app/BMW%20cars/bmwi7/21016c9ff58d4a9c834c5909a578b8ea_1200x0-removebg-preview%20(1).png",
     link360:
       "https://m.dcdapp.com/motor/inapp/pano-new/inner.html?series_id=118",
     typeData: [

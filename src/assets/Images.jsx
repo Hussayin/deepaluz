@@ -1,2 +1,2 @@
 // export { default as tissotLogo } from "././tissotLogo.jpg";
-export { default as hamiltonLogo } from "././hamilton.png";
+export { default as deepalicon } from "././deepal.webp";

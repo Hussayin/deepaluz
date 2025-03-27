@@ -24,7 +24,7 @@ import { GiBatteryPackAlt } from "react-icons/gi";
 import { TbEngine } from "react-icons/tb";
 import { TbAutomaticGearbox } from "react-icons/tb";
 
-const LixingDetails = () => {
+const HongqiDetails = () => {
   const { products } = useContext(DetailContext);
   const { id } = useParams();
   const { sendToTelegram } = useContext(TelegramContext);
@@ -60,7 +60,7 @@ const LixingDetails = () => {
   useEffect(() => {
     if (products?.length) {
       const foundProduct = products.find(
-        (item) => item.brend === "LIXING" && String(item.id) === String(id)
+        (item) => item.brend === "HONGQI" && String(item.id) === String(id)
       );
       setProduct(foundProduct || null);
     }
@@ -92,7 +92,7 @@ const LixingDetails = () => {
   return (
     <div className=" mb-[90px] overflow-x-hidden relative ">
       <div className="fixed w-[100%] top-0 z-[10000000] dark:bg-white dark:border-black bg-[#323232] border-[#cecccc85] border-solid border-b-[1px] p-[15px] px-[20px]">
-        <Link to="/lixing">
+        <Link to="/hongqi">
           <h1 className="flex items-center gap-[2px] font-bold font-nunito text-[17px]">
             <FaChevronLeft className="text-[25px]  " /> назад
           </h1>
@@ -749,4 +749,4 @@ const LixingDetails = () => {
   );
 };
 
-export default LixingDetails;
+export default HongqiDetails;
