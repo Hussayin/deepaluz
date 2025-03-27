@@ -39,7 +39,7 @@ const Populor = () => {
                     <img
                       src={watch.logo}
                       alt="logo-brend"
-                      className={` w-[50px] ${watch.logoColor} ${watch.logoPa} bg-black rounded-[50%] object-cover`}
+                      className={` ${watch.logoWidth} ${watch.logoColor} ${watch.logoPa} bg-black rounded-[50%] object-cover w-[50px] `}
                     />
                   </motion.div>
                   {/* title */}

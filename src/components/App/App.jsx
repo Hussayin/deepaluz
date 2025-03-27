@@ -19,6 +19,8 @@ import DeepalCars from "../watchs/Deepal";
 import DeepalDetails from "../watchDetails/DeepalDetails";
 import Jetour from "../watchs/Jetour";
 import JetourDetails from "../watchDetails/JetourDetails";
+import LipmotorsCars from "../watchs/Lipmotors";
+import LipmotorsDetails from "../watchDetails/LipmotorsDetails";
 
 const App = () => {
   return (
@@ -50,6 +52,9 @@ const App = () => {
           {/* Jetour */}
           <Route path="/jetour" element={<Jetour />} />
           <Route path="/jetour/:id" element={<JetourDetails />} />
+          {/* Liepmotors */}
+          <Route path="/lipmotors" element={<LipmotorsCars />} />
+          <Route path="/lipmotors/:id" element={<LipmotorsDetails />} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>

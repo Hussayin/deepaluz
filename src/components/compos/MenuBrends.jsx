@@ -21,7 +21,7 @@ const MenuBrends = () => {
               <img
                 src={brend.image}
                 alt={brend.title}
-                className=" border-solid rounded-[50%] h-[75px] w-[75px] text-center dark:bg-white bg-[black] border-[#232323] border-[3px] object-contain "
+                className={`border-solid rounded-[50%] ${brend.logoColor}  h-[75px] w-[75px] text-center dark:bg-white bg-[black] border-[#232323] border-[3px] object-contain `}
               />
               <h1 className=" font-nunito font-bold text-[13px]">
                 {brend.title}
