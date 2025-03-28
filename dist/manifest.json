@@ -1,18 +1,18 @@
 {
-  "name": "The Watch Outlet",
-  "short_name": "The Watch Outlet",
+  "name": "Deepal Uz",
+  "short_name": "Deepal Cars",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/logo-img-iconn.png",
+      "src": "/image192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/logo-img-mainn.png",
+      "src": "/image512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
