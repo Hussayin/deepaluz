@@ -112,7 +112,7 @@ const LixingDetails = () => {
       >
         {/* buttons */}
         <a
-          href="https://t.me/Bekhruz777"
+          href="https://t.me/khusko077"
           target="_blank"
           className=" text-[18px] p-[5px] border-[2px] bg-green-600 rounded-[10px] border-black w-[100%] text-center "
         >
@@ -121,7 +121,7 @@ const LixingDetails = () => {
         <div>
           <a
             target="_blank"
-            href="https://www.instagram.com/the_watch_outlet_uz"
+            href="https://www.instagram.com/khusko1"
             className=" text-[30px]  "
           >
             <FaInstagram />
@@ -130,7 +130,7 @@ const LixingDetails = () => {
         <div>
           <a
             target="_blank"
-            href="https://t.me/TheWatchOutlet"
+            href="https://t.me/khusko077"
             className=" text-[30px]"
           >
             <FaTelegram />

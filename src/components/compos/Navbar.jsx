@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { MdSell } from "react-icons/md";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { location } from "../../assets/Images";
 
 const Navbar = () => {
   const { toggleDarkMode, darkMode } = useTheme();
@@ -79,7 +80,7 @@ const Navbar = () => {
         </div>
         {/*  */}
         {open && (
-          <div className=" fixed z-[1000000000000] top-[0px] p-[25px]  bg-[#0f192b] dark:bg-white  left-0 w-[100%] h-[100%] overflow-scroll m-auto right-0  md:hidden ">
+          <div className=" fixed z-[1000000000000] top-[0px] p-[25px]  bg-[#232323] dark:bg-white  left-0 w-[100%] h-[100%] overflow-scroll m-auto right-0  md:hidden ">
             <div className=" w-[100%] flex justify-center items-center ">
               {open && (
                 <IoClose
@@ -90,7 +91,7 @@ const Navbar = () => {
             </div>
             {/* Social medi and servise */}
             <div className=" flex justify-center mt-[30px] items-center flex-col gap-[20px]">
-              <motion.div
+              <motion.a
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
@@ -99,33 +100,18 @@ const Navbar = () => {
                   delay: 0.1,
                 }}
                 target="_blank"
-                className=" w-[100%]"
+                href="https://t.me/khusko077"
+                className=" flex justify-center flex-col gap-[10px] bg-white w-[100%] text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white"
               >
-                <Link
-                  to="/skupka"
-                  className=" flex justify-center bg-white text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white w-[100%] "
-                >
-                  Скупка часов
-                  <MdSell className=" absolute left-[15px] text-[30px]  " />
-                </Link>
-              </motion.div>
-
-              <motion.a
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{
-                  ease: "easeOut", // Easing funksiyasi
-                  duration: 1, // Animatsiya davomiyligi
-                  delay: 0.2,
-                }}
-                href="https://maps.app.goo.gl/fqPkLFAJHpWpFBi59"
-                target="_blank"
-                className=" flex justify-center bg-white text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white w-[100%] "
-              >
-                Location
-                <FaMapLocationDot className=" absolute left-[15px] text-[30px]  " />
+                <img
+                  src={location}
+                  alt="man img"
+                  className=" w-[100%] h-[300px] object-cover rounded-[15px] "
+                />
+                <h1 className=" font-nunito text-[20px] ">
+                  Location: Kiyot 38A, Toshkent
+                </h1>
               </motion.a>
-
               <motion.a
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -135,13 +121,18 @@ const Navbar = () => {
                   delay: 0.2,
                 }}
                 target="_blank"
-                href="https://www.instagram.com/the_watch_outlet_uz"
-                className=" flex justify-center bg-white text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white w-[100%] "
+                href="https://t.me/khusko077"
+                className=" flex justify-center flex-col gap-[10px] bg-white w-[100%] text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white"
               >
-                Instagram
-                <BsInstagram className=" absolute left-[15px] text-[30px]  " />
+                <img
+                  src="https://khusko1.netlify.app/mypic.jpg"
+                  alt="man img"
+                  className=" w-[100%] h-[300px] object-cover rounded-[15px] "
+                />
+                <h1 className=" font-nunito text-[20px] ">
+                  Funder: Husan Bahramov
+                </h1>
               </motion.a>
-
               <motion.a
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -149,70 +140,6 @@ const Navbar = () => {
                   ease: "easeOut", // Easing funksiyasi
                   duration: 1, // Animatsiya davomiyligi
                   delay: 0.3,
-                }}
-                target="_blank"
-                href="https://www.instagram.com/bekhruz_watch"
-                className=" flex justify-center bg-white text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white w-[100%] "
-              >
-                Instagram
-                <BsInstagram className=" absolute left-[15px] text-[30px]  " />
-              </motion.a>
-
-              <motion.a
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{
-                  ease: "easeOut", // Easing funksiyasi
-                  duration: 1, // Animatsiya davomiyligi
-                  delay: 0.4,
-                }}
-                target="_blank"
-                href="https://t.me/TheWatchOutlet"
-                className=" flex justify-center bg-white text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white w-[100%] "
-              >
-                Telegram
-                <BsTelegram className=" absolute left-[15px] text-[30px]  " />
-              </motion.a>
-
-              <motion.a
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{
-                  ease: "easeOut", // Easing funksiyasi
-                  duration: 1, // Animatsiya davomiyligi
-                  delay: 0.5,
-                }}
-                target="_blank"
-                href="https://t.me/Bekhruz777"
-                className=" flex justify-center bg-white text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white w-[100%] "
-              >
-                Telegram (admin)
-                <BsTelegram className=" absolute left-[15px] text-[30px]  " />
-              </motion.a>
-
-              <motion.a
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{
-                  ease: "easeOut", // Easing funksiyasi
-                  duration: 1, // Animatsiya davomiyligi
-                  delay: 0.5,
-                }}
-                target="_blank"
-                href="https://t.me/the_watch_outlet_bot"
-                className=" flex justify-center bg-white text-black dark:text-black dark:border-black font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-nunito text-[20px] border-white w-[100%] "
-              >
-                Telegram Mini app
-                <BsTelegram className=" absolute left-[15px] text-[30px]  " />
-              </motion.a>
-
-              <motion.a
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{
-                  ease: "easeOut", // Easing funksiyasi
-                  duration: 1, // Animatsiya davomiyligi
-                  delay: 0.6,
                 }}
                 target="_blank"
                 href="tel:+998977122206"

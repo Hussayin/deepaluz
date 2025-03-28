@@ -18,13 +18,10 @@ const Search = () => {
       return;
     }
 
-    const filtered = Object.keys(AllWatchs).flatMap((watchType) =>
-      AllWatchs[watchType].filter(
-        (watch) =>
-          // Qidiruvni title yoki rafcode bo'yicha amalga oshirish
-          watch.title.toLowerCase().includes(query.toLowerCase()) ||
-          watch.rafcode.toLowerCase().includes(query.toLowerCase())
-      )
+    const filtered = AllWatchs.filter(
+      (watch) =>
+        watch.title.toLowerCase().includes(query.toLowerCase()) ||
+        watch.rafcode.toLowerCase().includes(query.toLowerCase())
     );
 
     setFilteredCars(filtered);
@@ -35,7 +32,7 @@ const Search = () => {
     <div
       className={` w-[100%] ${
         view ? "fixed top-0 bg-[#0f192b] " : "block mt-[5px] "
-      } search-container z-[100000]  `}
+      } search-container z-[100000000000000000]  `}
     >
       <div className={`w-[90%]  my-[15px]  m-auto `}>
         <input

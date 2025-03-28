@@ -9,6 +9,7 @@ export const PopulorWatch = [
     logoWidth: "w-[45px] bg-[white]  ",
     right: "-right-[190px]",
     title: "PR516 CHRONOGRAPH",
+    logoColor: "bg-white",
     rafcode: "Lipmotors Pro 7",
     brend: "LIPMOTORS",
     demoPrice: "60.000",
@@ -22,6 +23,7 @@ export const PopulorWatch = [
     link: "/lipmotors",
     logoWidth: "w-[45px] bg-[white] ",
     right: "-right-[200px]",
+    logoColor: "bg-white",
     title: "PR516 CHRONOGRAPH",
     rafcode: "Lipmotors Pro 7",
     brend: "LIPMOTORS",
@@ -247,18 +249,6 @@ export const watchBrends = [
     image:
       "https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg",
     title: "BMW",
-  },
-  {
-    id: "6",
-    link: "/hamilton",
-    image: "https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg",
-    title: "BYD",
-  },
-  {
-    id: "7",
-    link: "/hamilton",
-    image: "https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg",
-    title: "BYD",
   },
 ];
 
